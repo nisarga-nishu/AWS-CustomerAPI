@@ -1,0 +1,222 @@
+{
+  "openapi" : "3.0.0",
+  "servers" : [ {
+    "description" : "Customer CRUD Rest API",
+    "url" : "https://s3b1om8tb9.execute-api.ap-southeast-2.amazonaws.com/Test/customer"
+  }, {
+    "description" : "SwaggerHub API Auto Mocking",
+    "url" : "https://virtserver.swaggerhub.com/nisarga-nishu/CusomerRestAPI/1.0.0"
+  } ],
+  "info" : {
+    "description" : "This is a customer API using OpenAPI specification",
+    "version" : "1.0.0",
+    "title" : "Customer Rest API",
+    "contact" : {
+      "name" : "Nisarga Nagaraj",
+      "email" : "nisarganarmada@gmail.com"
+    }
+  },
+  "paths" : {
+    "/customer" : {
+      "description" : "Customer resource",
+      "get" : {
+        "description" : "Operation to fetch Customers",
+        "operationId" : "listCustomers",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "CustomerName",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "Nishu"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/customers"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/customers"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "description" : "Operation to add customer",
+        "operationId" : "addCustomer",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/customer"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "201" : {
+            "description" : "New  customer added successfully"
+          }
+        }
+      },
+      "put" : {
+        "description" : "Update an existing customer",
+        "operationId" : "updateCustomer",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/customer"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Updated successfully"
+          }
+        }
+      },
+      "delete" : {
+        "description" : "Delete a customer",
+        "operationId" : "deleteCustomer",
+        "parameters" : [ {
+          "name" : "Api_key",
+          "in" : "header",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "customerId",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Deleted Successfully"
+          }
+        }
+      }
+    },
+    "/customer/{customerId}" : {
+      "description" : "Fetch customer details based on path parameters",
+      "get" : {
+        "operationId" : "getCustomerbyId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "customerId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successfull",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/customers"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "customer" : {
+        "type" : "object",
+        "items" : {
+          "properties" : {
+            "customerId" : {
+              "type" : "string",
+              "example" : 1
+            },
+            "FirstName" : {
+              "type" : "string",
+              "example" : "Nishu"
+            },
+            "LastName" : {
+              "type" : "string",
+              "example" : "Nagaraj"
+            },
+            "address" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "city" : {
+                    "type" : "string",
+                    "example" : "Melbourne"
+                  },
+                  "state" : {
+                    "type" : "string",
+                    "example" : "Victoria"
+                  },
+                  "pincode" : {
+                    "type" : "number",
+                    "example" : 3006
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "customers" : {
+        "type" : "array",
+        "items" : {
+          "properties" : {
+            "customerId" : {
+              "type" : "string",
+              "example" : 1
+            },
+            "FirstName" : {
+              "type" : "string",
+              "example" : "Nishu"
+            },
+            "LastName" : {
+              "type" : "string",
+              "example" : "Nagaraj"
+            },
+            "address" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "city" : {
+                    "type" : "string",
+                    "example" : "Melbourne"
+                  },
+                  "state" : {
+                    "type" : "string",
+                    "example" : "Victoria"
+                  },
+                  "pincode" : {
+                    "type" : "number",
+                    "example" : 3006
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
