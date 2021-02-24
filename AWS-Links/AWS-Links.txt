@@ -1,0 +1,36 @@
+ENDPOINT CONFIGURATION
+
+HTTP Endpoint by Elastic Beanstalk:
+
+http://customerapi.ap-southeast-2.elasticbeanstalk.com/
+Endpoint for GET:
+http://customerapi.ap-southeast-2.elasticbeanstalk.com/getCustomers
+http://customerapi.ap-southeast-2.elasticbeanstalk.com/getCustomers/{customerId}
+Endpoint for POST:
+http://customerapi.ap-southeast-2.elasticbeanstalk.com/saveCustomer
+Endpoint for PUT:
+http://customerapi.ap-southeast-2.elasticbeanstalk.com/editCustomer
+Endpoint for DELETE:
+http://customerapi.ap-southeast-2.elasticbeanstalk.com/deleteCustomer
+
+HTTPS Endpoint by AWS API Gateway:
+
+https://s3b1om8tb9.execute-api.ap-southeast-2.amazonaws.com/Test
+Endpoint for GET, POST, PUT and DELETE
+https://s3b1om8tb9.execute-api.ap-southeast-2.amazonaws.com/Test/customer
+Endpoint for GET element by ID
+https://s3b1om8tb9.execute-api.ap-southeast-2.amazonaws.com/Test/customer/{customerId}
+
+TEST DATA
+Json request for POST
+{
+    "address": {
+        "city": "Melbourne",
+        "state": "Victoria",
+        "pinCode": 3006
+    },
+    "lastName": "Nagaraj",
+    "firstname": "Nisarga"
+}
+Link with customerId to perform GET operation
+https://s3b1om8tb9.execute-api.ap-southeast-2.amazonaws.com/Test/customer/9ef5f3dc-83d0-4c3e-9b21-32e0b39c59bd
