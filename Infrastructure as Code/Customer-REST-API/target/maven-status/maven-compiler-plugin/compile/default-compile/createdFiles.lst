@@ -1,0 +1,5 @@
+com\customer\aws\entity\Customer.class
+com\customer\aws\repository\CustomerRepository.class
+com\customer\aws\config\DynamoDBConfig.class
+com\customer\aws\entity\Address.class
+com\customer\aws\SpringbootDynamodbCustomerApplication.class

@@ -1,0 +1,5 @@
+D:\Customer-REST-API\src\main\java\com\customer\aws\config\DynamoDBConfig.java
+D:\Customer-REST-API\src\main\java\com\customer\aws\SpringbootDynamodbCustomerApplication.java
+D:\Customer-REST-API\src\main\java\com\customer\aws\entity\Address.java
+D:\Customer-REST-API\src\main\java\com\customer\aws\repository\CustomerRepository.java
+D:\Customer-REST-API\src\main\java\com\customer\aws\entity\Customer.java
